@@ -73,14 +73,14 @@ section {
                 flex-direction: column;
                 justify-content: center;
                 align-items: end;
-                gap: 30px;
+                gap: 20px;
 
                 & .car-information {
                     font-weight: bold;
                 }
 
                 & h2 {
-                    font-size: 4em;
+                    font-size: 8em;
                     line-height: 1em;
                     font-family: "League Gothic", sans-serif;   
                 }
