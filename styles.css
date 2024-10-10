@@ -53,14 +53,27 @@ section {
 
             & .car-img {
                 position: absolute;
-                top: 20%;
+                top: 26%;
                 transform: translateY(-50%);
-                transform: translateX(20%);
+                transform: translateX(16%);
                 width: 70%;
                 
                 & img {
                     width: 80%;
-                    transform: rotate(-23deg);
+                    transform: rotate(-20deg);
+                }
+
+                &::before {
+                    content: " ";
+                    position: absolute;
+                    background-color: #000;
+                    width: 100%;
+                    height: 100px;
+                    top: 150%;
+                    left: 1px;
+                    border-radius: 50%;
+                    filter: blur(50px);
+
                 }
             }
 
@@ -68,7 +81,7 @@ section {
                 position: absolute;
                 right: 150px;
                 width: 50%;
-                height: 100%;
+                height: 104%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -80,7 +93,7 @@ section {
                 }
 
                 & h2 {
-                    font-size: 8em;
+                    font-size: 6em;
                     line-height: 1em;
                     font-family: "League Gothic", sans-serif;   
                 }
@@ -111,18 +124,18 @@ section {
             content: " ";
             position: absolute;
             height: -10px;
-            width: 75%;
+            width: 85%;
             top: 50%;
-            left: 15%;
+            left: 9%;
             border: 1px, solid #beff1b;
         }
     }
     
     .arrows {
-        width: 70vw;
+        width: 80vw;
         position: absolute;
         top: 50%;
-        left: 53%;
+        left: 50%;
         transform: translate(-50%, -25px);
         display: flex;
         justify-content: space-between;
@@ -181,6 +194,72 @@ section {
             
             & .active {
                 background-color: #fff;
+            }
+        }
+    }
+}
+
+
+
+section {
+
+    & .list {
+    --calculation: 1;
+    
+        & .item {
+            transform: translateX(calc(100vw * var(--calculation)));
+            transition: 0.5s;
+            opacity: 0;
+
+            & .car-img {
+                & img {
+                    transform: rotate(0);
+                    transition: 0.5s;
+                    transition-delay: 0.5s;
+                }
+            }
+
+            & .content {
+
+                & .car-information, h2, .description, .information {
+                    transform: translateX(calc(200px * var(--calculation)));
+                    transition: 0.7s;
+                    transition-delay: 0.3s;
+                    opacity: 0;
+                }
+                
+                & h2 {
+                    transition-delay: 0.5s;
+                }
+
+                & .information {
+                    transition-delay: 0.7s;
+                }
+
+                & .description {
+                    transition-delay: 0.9s;
+                }
+
+            }
+        }
+
+        & .active {
+            transform: translateX(0);
+            transition: 0.5s;
+            opacity: 1;
+            
+            & .car-img {
+                & img {
+                    transform: rotate(-20deg);
+                }
+            }
+
+            & .content {
+
+                & .car-information, h2, .description, .information {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
             }
         }
     }
